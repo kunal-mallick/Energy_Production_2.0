@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPP.io</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
     <div class="main">
         <div class="navbar">
-            <img src="logo.png" class="logo">
+            <image src="{{ url_for('static',filename='img/logo.png') }}" class="logo">
             <div class="icon">
                 <h2 class="logo_name">EPP.io</h2>
             </div>
@@ -40,7 +40,7 @@
                 <button type="submit" class="btn" onclick="openPopup()">Predict</button>
             </div>
             <div class="popup" id="popup">
-                <img src="logo.png">
+                <image src="{{ url_for('static',filename='img/logo.png') }}">
                 <h4>Energy Product is <br> <samp>1000</samp> mw</h4>
                 <button type="button" onclick="closePopup()">ok</button>
             </div>
