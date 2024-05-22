@@ -5,7 +5,7 @@
 
 .main{
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url("{{ url_for('static',filename='bg.jpg') }}");
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url("https://raw.githubusercontent.com/kunal-mallick/Energy_Production_2.0/main/static/bg.jpg");
     background-position: center;
     background-size: cover;
     height: 109vh;
