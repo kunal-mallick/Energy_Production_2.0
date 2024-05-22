@@ -37,8 +37,24 @@
                 <input type="number" placeholder="Temperature" id="temp">
                 <input type="number" placeholder="Exhaust Vacuum" id="ev">
                 <input type="number" placeholder="Ambient Pressure" id="ap">
-                <button class="btn">Predict</button>
+                <button type="submit" class="btn" onclick="openPopup()">Predict</button>
             </div>
+            <div class="popup" id="popup">
+                <img src="logo.png">
+                <h4>Energy Product is <br> <samp>1000</samp> mw</h4>
+                <button type="button" onclick="closePopup()">ok</button>
+            </div>
+            <script>
+            let popup = document.getElementById("popup")
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+            </script>
         </div>
     </div>
 </body>
