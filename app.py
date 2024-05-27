@@ -1,4 +1,4 @@
-from flask import Flask,render_template, request
+from flask import Flask,render_template, request, jsonify
 app=Flask(__name__)
 import numpy as np
 
@@ -12,7 +12,7 @@ def pre():
     ev = float(request.form["ev"])
     ap = float(request.form["ap"])
     avg = (temp+ev+ap)/2
-    return render_template('index.html', r1='Energy Product is', r2='{}'.format(avg), r3 = ' mw')
+    return jsonify(avg)
 
 if __name__=='__main__':
     app.run(debug=True)
