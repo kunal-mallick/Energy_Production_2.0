@@ -1,4 +1,4 @@
-from flask import Flask,render_template, request, jsonify
+from flask import Flask,render_template, request
 app=Flask(__name__)
 import numpy as np
 
@@ -6,13 +6,15 @@ import numpy as np
 def welcome():
     return render_template('index.html', r1='Check Your', r2='Energy', r3 = ' Production')
 
-@app.route('/pre', methods=['POST'])
+@app.post('/')
 def pre():
     temp = float(request.form["temp"])
     ev = float(request.form["ev"])
     ap = float(request.form["ap"])
     avg = (temp+ev+ap)/2
-    return jsonify(avg)
+    return render_template('index.html', r1='Energy Product is', r2='{}'.format(avg), r3 = ' mw')
+
+#  TODO: Add popop 
 
 if __name__=='__main__':
     app.run(debug=True)
