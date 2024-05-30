@@ -14,7 +14,5 @@ def pre():
     avg = (temp+ev+ap)/2
     return render_template('index.html', r1='Energy Product is', r2='{}'.format(avg), r3 = ' mw')
 
-#  TODO: Add popop 
-
 if __name__=='__main__':
     app.run(debug=True)
