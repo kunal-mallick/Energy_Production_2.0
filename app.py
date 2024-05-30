@@ -21,5 +21,5 @@ def pre():
     predict = round(prediction[0],2)
     return render_template('index.html', r1='Energy Product is', r2='{}'.format(predict), r3 = ' mw')
 
-if __name__=='__main__':
-    app.run(debug=True)
+# if __name__=='__main__':
+#     app.run(debug=True)
