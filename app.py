@@ -1,6 +1,12 @@
-from flask import Flask,render_template, request
-app=Flask(__name__)
+import pickle
+import math as mt
 import numpy as np
+from flask import Flask,render_template, request
+
+app=Flask(__name__)
+
+load = open('model.pkl','rb')
+model = pickle.load(load)
 
 @app.route('/')
 def welcome():
@@ -8,11 +14,14 @@ def welcome():
 
 @app.post('/')
 def pre():
-    temp = float(request.form["temp"])
+    temp = mt.log(float(request.form["temp"]))
     ev = float(request.form["ev"])
-    ap = float(request.form["ap"])
-    avg = (temp+ev+ap)/2
-    return render_template('index.html', r1='Energy Product is', r2='{}'.format(avg), r3 = ' mw')
+    ap = mt.log(float(request.form["ap"]))
+    prediction = model.predict([[temp, ev, ap]])
+    predict = round(prediction[0],2)
+    return render_template('index.html', r1='Energy Product is', r2='{}'.format(predict), r3 = ' mw')
+
+#  TODO: Add popop 
 
 if __name__=='__main__':
     app.run(debug=True)
