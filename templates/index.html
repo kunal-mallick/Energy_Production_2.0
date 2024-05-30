@@ -45,9 +45,9 @@
             <div  class="form">
                 <form method="post">
                     <h3 class="pre">Predict Energy</h3>
-                    <input type="number" placeholder="Temperature" name="temp">
-                    <input type="number" placeholder="Exhaust Vacuum" name="ev">
-                    <input type="number" placeholder="Ambient Pressure" name="ap">
+                    <input type="number" placeholder="Temperature" name="temp" min="1.81" max="37.11">
+                    <input type="number" placeholder="Exhaust Vacuum" name="ev" min="992.89" max="1033.3">
+                    <input type="number" placeholder="Ambient Pressure" name="ap" min="25.56" max="100.16">
                     <button type="submit" class="btn">Predict</button>
                 </form>
             </div>
