@@ -22,4 +22,4 @@ def pre():
     return render_template('index.html', r1='Energy Product is', r2='{}'.format(predict), r3 = ' mw')
 
 if __name__=='__main__':
-    app.run()
+    app.run(debug=True, port=8000)
